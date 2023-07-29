@@ -1,0 +1,204 @@
+meta:
+  name: factorio-no-module
+  description: ""
+game:
+  name: ""
+  version-range: ""
+factories:
+  - name: "组装机1型"
+    speed_magnification: 0.5
+  - name: "组装机2型"
+    speed_magnification: 0.75
+items:
+  - name: "石矿"
+    speed_seconds: 1
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "煤矿"
+    speed_seconds: 1
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "石砖"
+    speed_seconds: 3.2
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "石矿"
+        amount: 2
+  - name: "石墙"
+    speed_seconds: 0.5
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "石砖"
+        amount: 5
+  - name: "铁板"
+    speed_seconds: 1
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "铜板"
+    speed_seconds: 1
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "铁齿轮"
+    speed_seconds: 0.5
+    amount: 1
+    requires:
+      - name: "铁板"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "钢材"
+    speed_seconds: 16
+    amount: 1
+    requires:
+      - name: "铁板"
+        amount: 5
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "标准弹匣"
+    speed_seconds: 1
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "铁板"
+        amount: 4
+  - name: "穿甲弹匣"
+    speed_seconds: 3
+    amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "铜板"
+        amount: 5
+      - name: "标准弹匣"
+        amount: 1
+      - name: "钢材"
+        amount: 1
+  - name: "机自研究包"
+    speed_seconds: 5
+    amount: 1
+    requires:
+      - name: "铜板"
+        amount: 1
+      - name: "铁齿轮"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "基础传送带"
+    speed_seconds: 0.5
+    amount: 2
+    throughput: 15
+    density: 8
+    requires:
+      - name: "铁板"
+        amount: 1
+      - name: "铁齿轮"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "铜线"
+    speed_seconds: 0.5
+    amount: 2
+    requires:
+      - name: "铜板"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "电路板"
+    speed_seconds: 0.5
+    amount: 1
+    requires:
+      - name: "铜线"
+        amount: 3
+      - name: "铁板"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "电力机械臂"
+    speed_seconds: 0.5
+    amount: 1
+    requires:
+      - name: "电路板"
+        amount: 1
+      - name: "铁齿轮"
+        amount: 1
+      - name: "铁板"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "物流科技包"
+    speed_seconds: 6
+    amount: 1
+    requires:
+      - name: "电力机械臂"
+        amount: 1
+      - name: "基础传送带"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "标准手雷"
+    speed_seconds: 8
+    amount: 1
+    requires:
+      - name: "煤矿"
+        amount: 10
+      - name: "铁板"
+        amount: 5
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "军备科技包"
+    speed_seconds: 10
+    amount: 2
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "标准手雷"
+        amount: 1
+      - name: "穿甲弹匣"
+        amount: 1
+      - name: "石墙"
+        amount: 2

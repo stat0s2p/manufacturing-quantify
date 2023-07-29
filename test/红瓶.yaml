@@ -1,0 +1,5 @@
+item_output_minute:
+  name: "机自研究包"
+  amount: 60
+factories:
+  - "组装机2型"
