@@ -8,11 +8,25 @@ factories:
   - name: "组装机1型"
     speed_magnification: 0.5
   - name: "组装机2型"
-    speed_magnification: 0.75
+    speed_magnification: 1.25
 items:
+  - name: "水"
+    speed_seconds: 1
+    amount: 1200
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
   - name: "石矿"
     speed_seconds: 1
     amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "石油气"
+    speed_seconds: 5
+    amount: 55
     supported_factories:
       - "组装机1型"
       - "组装机2型"
@@ -24,6 +38,30 @@ items:
       - "组装机1型"
       - "组装机2型"
       - "组装机3型"
+  - name: "硫磺"
+    speed_seconds: 1
+    amount: 2
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "水"
+        amount: 30
+      - name: "石油气"
+        amount: 30
+  - name: "塑料"
+    speed_seconds: 1
+    amount: 2
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+    requires:
+      - name: "煤矿"
+        amount: 1
+      - name: "石油气"
+        amount: 20
   - name: "石砖"
     speed_seconds: 3.2
     amount: 1
@@ -68,12 +106,36 @@ items:
       - "组装机1型"
       - "组装机2型"
       - "组装机3型"
+  - name: "管道"
+    speed_seconds: 0.5
+    amount: 1
+    requires:
+      - name: "铁板"
+        amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
   - name: "钢材"
     speed_seconds: 16
     amount: 1
     requires:
       - name: "铁板"
         amount: 5
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "内燃机"
+    speed_seconds: 10
+    amount: 1
+    requires:
+      - name: "铁齿轮"
+        amount: 1
+      - name: "管道"
+        amount: 2
+      - name: "钢材"
+        amount: 1
     supported_factories:
       - "组装机1型"
       - "组装机2型"
@@ -146,6 +208,34 @@ items:
         amount: 3
       - name: "铁板"
         amount: 1
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "集成电路"
+    speed_seconds: 6
+    amount: 1
+    requires:
+      - name: "铜线"
+        amount: 4
+      - name: "电路板"
+        amount: 2
+      - name: "塑料"
+        amount: 2
+    supported_factories:
+      - "组装机1型"
+      - "组装机2型"
+      - "组装机3型"
+  - name: "化工科技包"
+    speed_seconds: 24
+    amount: 2
+    requires:
+      - name: "集成电路"
+        amount: 3
+      - name: "内燃机"
+        amount: 2
+      - name: "硫磺"
+        amount: 2
     supported_factories:
       - "组装机1型"
       - "组装机2型"

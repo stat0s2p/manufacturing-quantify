@@ -25,9 +25,8 @@ class FactoryItem(Item):
 
     def require_unity_speed(self) -> dict[str, float]:
         result: dict[str, float] = {}
-        output_speed = self.unity_speed()
         for require in self.requires:
-            result[require.name] = output_speed * require.amount
+            result[require.name] = require.amount/self.speed_seconds
         return result
 
 
@@ -158,7 +157,7 @@ class Database:
             require_item = self._items.get(require_item_name)
             if require_item is None:
                 raise Exception(f"require item:{require_item_name} not found")
-            self._compute_unity_item_factories(require_item, require_item_speed * unity_factory_amount,
+            self._compute_unity_item_factories(require_item, require_item_speed*unity_factory_amount,
                                                pinned_factories, item_factories)
         pass
 

@@ -5,7 +5,7 @@ from database import ItemRequireComputeSpec, ItemRequire, Database
 
 def execute_request_from_file(instance: Database, name: str):
     file_name = f"test/{name}"
-    with open(file_name,encoding="utf8") as fp:
+    with open(file_name, encoding="utf8") as fp:
         node = yaml.safe_load(fp)
     spec = ItemRequireComputeSpec()
     spec.factories = node["factories"]
@@ -20,7 +20,7 @@ def execute_request_from_file(instance: Database, name: str):
 if __name__ == '__main__':
     db_name = "databases/factorio.yaml"
     db = Database.create_from_file(db_name)
-    spec_files= glob.glob1("test","*.yaml")
+    spec_files = glob.glob1("test", "*.yaml")
     for spec_file in spec_files:
         print(f"computing spec:{spec_file}")
         execute_request_from_file(db, spec_file)
